@@ -4,11 +4,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "https://zinadore.github.io/sim-os-web",
+        "baseUrl": "https://docs.iboutsikas.me",
         "fileName": "",
         "extension": "html",
         "usePrettyUrl": true,
-        "link": "https://zinadore.github.io/sim-os-web"
+        "link": "https://docs.iboutsikas.me"
       },
       "description": "",
       "title": "SimOS",
@@ -17,11 +17,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "https://zinadore.github.io/sim-os-web",
+        "baseUrl": "https://docs.iboutsikas.me",
         "fileName": "404",
         "extension": "html",
         "usePrettyUrl": false,
-        "link": "https://zinadore.github.io/sim-os-web/404.html"
+        "link": "https://docs.iboutsikas.me/404.html"
       },
       "description": "",
       "title": "SimOS",

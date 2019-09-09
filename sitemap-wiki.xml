@@ -4,43 +4,43 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki</loc>
+        <loc>https://docs.iboutsikas.me/wiki</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/installation</loc>
+        <loc>https://docs.iboutsikas.me/wiki/installation</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/setup</loc>
+        <loc>https://docs.iboutsikas.me/wiki/setup</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/algorithms</loc>
+        <loc>https://docs.iboutsikas.me/wiki/algorithms</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit</loc>
+        <loc>https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS</loc>
+        <loc>https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
-        <loc>https://zinadore.github.io/sim-os-web/wiki/running</loc>
+        <loc>https://docs.iboutsikas.me/wiki/running</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         

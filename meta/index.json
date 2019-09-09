@@ -6,11 +6,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://docs.iboutsikas.me",
           "fileName": "home.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://zinadore.github.io/sim-os-web/meta/home.index.json"
+          "link": "https://docs.iboutsikas.me/meta/home.index.json"
         },
         "description": "",
         "title": "Home . Index"
@@ -18,11 +18,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://docs.iboutsikas.me",
           "fileName": "pages.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://zinadore.github.io/sim-os-web/meta/pages.index.json"
+          "link": "https://docs.iboutsikas.me/meta/pages.index.json"
         },
         "description": "",
         "title": "Pages . Index"
@@ -30,11 +30,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://docs.iboutsikas.me",
           "fileName": "wiki.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://zinadore.github.io/sim-os-web/meta/wiki.index.json"
+          "link": "https://docs.iboutsikas.me/meta/wiki.index.json"
         },
         "description": "",
         "title": "Wiki . Index"
@@ -42,11 +42,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://docs.iboutsikas.me",
           "fileName": "all.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://zinadore.github.io/sim-os-web/meta/all.index.json"
+          "link": "https://docs.iboutsikas.me/meta/all.index.json"
         },
         "description": "",
         "title": "All . Index"

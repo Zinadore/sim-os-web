@@ -5,11 +5,11 @@
     "ownPages": [{
       "reference": {
         "path": "",
-        "baseUrl": "https://zinadore.github.io/sim-os-web",
+        "baseUrl": "https://docs.iboutsikas.me",
         "fileName": "wiki",
         "extension": "html",
         "usePrettyUrl": true,
-        "link": "https://zinadore.github.io/sim-os-web/wiki"
+        "link": "https://docs.iboutsikas.me/wiki"
       },
       "description": "",
       "title": "Wiki",
