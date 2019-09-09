@@ -8,19 +8,19 @@
         "ownPages": [{
           "reference": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "running",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/running"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/running"
           },
           "previous": {
             "path": "wiki/algorithms",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "PS_FCFS",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
           },
           "description": "",
           "title": "Running the simulation",
@@ -35,27 +35,27 @@
             "ownPages": [{
               "reference": {
                 "path": "wiki/algorithms",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "PS_FCFS",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
               },
               "next": {
                 "path": "wiki",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "running",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/running"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/running"
               },
               "previous": {
                 "path": "wiki/algorithms",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "MS_FirstFit",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
               },
               "description": "",
               "title": "First Come, First Served",
@@ -67,27 +67,27 @@
             "ownPages": [{
               "reference": {
                 "path": "wiki/algorithms",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "MS_FirstFit",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
               },
               "next": {
                 "path": "wiki/algorithms",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "PS_FCFS",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS"
               },
               "previous": {
                 "path": "wiki",
-                "baseUrl": "http://zinadore.github.io/sim-os-web",
+                "baseUrl": "https://zinadore.github.io/sim-os-web",
                 "fileName": "algorithms",
                 "extension": "html",
                 "usePrettyUrl": true,
-                "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms"
+                "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms"
               },
               "description": "",
               "title": "First Fit",
@@ -98,27 +98,27 @@
         "ownPages": [{
           "reference": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "algorithms",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms"
           },
           "next": {
             "path": "wiki/algorithms",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "MS_FirstFit",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit"
           },
           "previous": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "setup",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/setup"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/setup"
           },
           "description": "",
           "title": "Algorithms",
@@ -130,19 +130,19 @@
         "ownPages": [{
           "reference": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "installation",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/installation"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/installation"
           },
           "next": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "setup",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/setup"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/setup"
           },
           "description": "",
           "title": "Installation",
@@ -154,27 +154,27 @@
         "ownPages": [{
           "reference": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "setup",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/setup"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/setup"
           },
           "next": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "algorithms",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/algorithms"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/algorithms"
           },
           "previous": {
             "path": "wiki",
-            "baseUrl": "http://zinadore.github.io/sim-os-web",
+            "baseUrl": "https://zinadore.github.io/sim-os-web",
             "fileName": "installation",
             "extension": "html",
             "usePrettyUrl": true,
-            "link": "http://zinadore.github.io/sim-os-web/wiki/installation"
+            "link": "https://zinadore.github.io/sim-os-web/wiki/installation"
           },
           "description": "",
           "title": "Basic Setup",
@@ -186,11 +186,11 @@
       {
         "reference": {
           "path": "",
-          "baseUrl": "http://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://zinadore.github.io/sim-os-web",
           "fileName": "wiki",
           "extension": "html",
           "usePrettyUrl": true,
-          "link": "http://zinadore.github.io/sim-os-web/wiki"
+          "link": "https://zinadore.github.io/sim-os-web/wiki"
         },
         "description": "",
         "title": "Wiki",
@@ -199,15 +199,15 @@
       {
         "reference": {
           "path": "",
-          "baseUrl": "http://zinadore.github.io/sim-os-web",
+          "baseUrl": "https://zinadore.github.io/sim-os-web",
           "fileName": "wiki",
           "extension": "html",
           "usePrettyUrl": true,
-          "link": "http://zinadore.github.io/sim-os-web/wiki"
+          "link": "https://zinadore.github.io/sim-os-web/wiki"
         },
         "description": "",
         "title": "Wiki",
-        "content": "<html>\n <head><\/head>\n <body>\n  <p>This wiki will guide you through setting up Processing 3.x first. Then the SimOS library. Finally it will walk you through creating your first Process Scheduler and memory manager.<\/p> \n  <ul> \n   <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/installation\">Installation<\/a><\/li> \n   <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/setup\">Basic Setup<\/a><\/li> \n   <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/algorithms\">Algorithms<\/a> \n    <ul> \n     <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit\">First Fit<\/a><\/li> \n     <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS\">First Come, First Served<\/a><\/li> \n    <\/ul> <\/li> \n   <li><a href=\"http://zinadore.github.io/sim-os-web/wiki/running\">Running the simulation<\/a><\/li> \n  <\/ul> \n <\/body>\n<\/html>\n"
+        "content": "<html>\n <head><\/head>\n <body>\n  <p>This wiki will guide you through setting up Processing 3.x first. Then the SimOS library. Finally it will walk you through creating your first Process Scheduler and memory manager.<\/p> \n  <ul> \n   <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/installation\">Installation<\/a><\/li> \n   <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/setup\">Basic Setup<\/a><\/li> \n   <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/algorithms\">Algorithms<\/a> \n    <ul> \n     <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit\">First Fit<\/a><\/li> \n     <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS\">First Come, First Served<\/a><\/li> \n    <\/ul> <\/li> \n   <li><a href=\"https://zinadore.github.io/sim-os-web/wiki/running\">Running the simulation<\/a><\/li> \n  <\/ul> \n <\/body>\n<\/html>\n"
       }
     ]
   }},
@@ -215,11 +215,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "http://zinadore.github.io/sim-os-web",
+        "baseUrl": "https://zinadore.github.io/sim-os-web",
         "fileName": "",
         "extension": "html",
         "usePrettyUrl": true,
-        "link": "http://zinadore.github.io/sim-os-web"
+        "link": "https://zinadore.github.io/sim-os-web"
       },
       "description": "",
       "title": "SimOS",
@@ -228,11 +228,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "http://zinadore.github.io/sim-os-web",
+        "baseUrl": "https://zinadore.github.io/sim-os-web",
         "fileName": "404",
         "extension": "html",
         "usePrettyUrl": false,
-        "link": "http://zinadore.github.io/sim-os-web/404.html"
+        "link": "https://zinadore.github.io/sim-os-web/404.html"
       },
       "description": "",
       "title": "SimOS",

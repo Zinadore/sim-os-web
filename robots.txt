@@ -4,5 +4,5 @@ Disallow: /
 
 
 
-Sitemap: http://zinadore.github.io/sim-os-web/sitemap.xml
+Sitemap: https://zinadore.github.io/sim-os-web/sitemap.xml
 

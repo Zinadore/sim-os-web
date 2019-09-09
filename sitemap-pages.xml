@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://zinadore.github.io/sim-os-web/wiki</loc>
+        <loc>https://zinadore.github.io/sim-os-web/wiki</loc>
         <lastmod>2019-09-09</lastmod>
         <priority>0.0</priority>
         
