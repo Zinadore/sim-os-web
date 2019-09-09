@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /
+
+
+
+Sitemap: http://zinadore.github.io/sim-os-web/sitemap.xml
+

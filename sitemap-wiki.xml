@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/installation</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/setup</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/algorithms</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>http://zinadore.github.io/sim-os-web/wiki/running</loc>
+        <lastmod>2019-09-09</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    
+</urlset>

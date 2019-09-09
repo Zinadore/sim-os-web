@@ -1,0 +1,31 @@
+{
+  "ownKey": "home",
+  "ownPages": [
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "http://zinadore.github.io/sim-os-web",
+        "fileName": "",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "http://zinadore.github.io/sim-os-web"
+      },
+      "description": "",
+      "title": "SimOS",
+      "content": "<p>SimOS is a simulation framework written in Processing 3. It allows students to experiment with memory management and process scheduling algorithms in a graphical, and extensible environment.<\/p>\n"
+    },
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "http://zinadore.github.io/sim-os-web",
+        "fileName": "404",
+        "extension": "html",
+        "usePrettyUrl": false,
+        "link": "http://zinadore.github.io/sim-os-web/404.html"
+      },
+      "description": "",
+      "title": "SimOS",
+      "content": ""
+    }
+  ]
+}

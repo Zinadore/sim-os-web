@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="http://zinadore.github.io/sim-os-web/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Basic Setup</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+<link rel="prev" href="http://zinadore.github.io/sim-os-web/wiki/installation">
+
+
+<link rel="next" href="http://zinadore.github.io/sim-os-web/wiki/algorithms">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"http://zinadore.github.io/sim-os-web","environment":"release","version":"1.0.0"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/setup.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki","baseUrl":"http://zinadore.github.io/sim-os-web","fileName":"setup","extension":"html","usePrettyUrl":true,"link":"http://zinadore.github.io/sim-os-web/wiki/setup"},"next":{"path":"wiki","baseUrl":"http://zinadore.github.io/sim-os-web","fileName":"algorithms","extension":"html","usePrettyUrl":true,"link":"http://zinadore.github.io/sim-os-web/wiki/algorithms"},"previous":{"path":"wiki","baseUrl":"http://zinadore.github.io/sim-os-web","fileName":"installation","extension":"html","usePrettyUrl":true,"link":"http://zinadore.github.io/sim-os-web/wiki/installation"},"description":"","title":"Basic Setup"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="http://zinadore.github.io/sim-os-web/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="http://zinadore.github.io/sim-os-web/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="http://zinadore.github.io/sim-os-web" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>Basic Setup</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>With everything installed we can get started with our simulation. In the next few sections, we will create a sketch, setup the simulation then implement some basic algorithms.</p>
+<h2 id="creating-the-sketch">Creating the sketch</h2>
+<p>Sketches are processing's project format. They are written in Java and you can use the integrated IDE to develop your code.</p>
+<p>So, startup processing and go to <code>File &gt; Save As</code> to save the sketch wherever you want. I am saving mine at <code>...\Documents\Sketches\HW2</code> for example. Next up we will create three functions that processing will call for us. You can always consult the <a href="https://processing.org/reference/" target="_blank">Processing API</a> if you need to. But first we need to import the library we installed earlier.</p>
+<h2 id="importing-the-library">Importing the library</h2>
+<p>Go to <code>Sketch &gt; Import Library &gt; Select SimOS</code>. The sketch will update to look like this:</p>
+<p><img class="img-fluid mx-auto d-block" src="/assets/media/library_imported.png"></img></p>
+<p>These import lines, will allow you to use the classes that are part of the library.</p>
+<h2 id="sketch-methods">Sketch Methods</h2>
+<p>The next three methods are sort of &quot;magic&quot;, in the sense that processing will call them on its own throughout its runtime.</p>
+<h3 id="settings">settings()</h3>
+<p>This method can be used to set some parameters before our window shows up. Here we are just settings the resolution
+of the window.
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kt">void</span> <span class="nf">settings</span><span class="o">()</span> <span class="o">{</span><br><a name="line-2"></a><span class="lineno">2 </span>    <span class="c1">// Width, Height</span><br><a name="line-3"></a><span class="lineno">3 </span>    <span class="n">size</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="mi">900</span><span class="o">);</span><br><a name="line-4"></a><span class="lineno">4 </span><span class="o">}</span><br></pre></div><br></p>
+<h3 id="setup">setup()</h3>
+<p>This method will get called after our window has been created. This is where we create our Simulation and define its options.
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="n">Simulator</span> <span class="n">sim</span><span class="o">;</span> <span class="c1">// &lt;-- Don't forget this line!</span><br><a name="line-2"></a><span class="lineno">2 </span><span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span><br><a name="line-3"></a><span class="lineno">3 </span>    <span class="n">SimulatorOptions</span> <span class="n">opts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulatorOptions</span><span class="o">();</span><br><a name="line-4"></a><span class="lineno">4 </span>    <span class="n">opts</span><span class="o">.</span><span class="na">Width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span><br><a name="line-5"></a><span class="lineno">5 </span>    <span class="n">opts</span><span class="o">.</span><span class="na">Height</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span><br><a name="line-6"></a><span class="lineno">6 </span><br><a name="line-7"></a><span class="lineno">7 </span>    <span class="n">sim</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Simulator</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">opts</span><span class="o">);</span><br><a name="line-8"></a><span class="lineno">8 </span><span class="o">}</span><br></pre></div><br></p>
+<p>For now the only options we set are the Width and Height</p>
+<h3 id="draw">draw()</h3>
+<p>This method gets called whenever a new frame needs to be drawn. Processing will try it's best to run at 60 or 30 frames per second depending on your hardware.
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span><br></pre></div><br></p>
+<p>You might be surprised to see the method completely emtpy. But you need it to be there, even if it is empty. If you forget this method the simulation will only draw itself once then stop!</p>
+<h2 id="sanity-check">Sanity Check</h2>
+<p>You can now hit the &quot;Play&quot; button in the top right and see the following screen:</p>
+<p><img class="img-fluid mx-auto d-block" src="/assets/media/simulation_setup.png"></img></p>
+<p>Make sure you can click the various buttons and that they get activated. Do not click Start Simulation though! We need to implement some of these algorithms for the simulation to work!</p>
+<p>If the Simulation freezes for any reason, you can just hit the &quot;Stop&quot; button from inside the Processing IDE. You will also see
+some error messages in the console!</p>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+                <div class="float-left">
+                    <a href="http://zinadore.github.io/sim-os-web/wiki/installation" class="button special small pill">
+                        <span>&larr;</span> Installation
+                    </a>
+                </div>
+            
+            
+                <div class="float-right">
+                    <a href="http://zinadore.github.io/sim-os-web/wiki/algorithms" class="button special small pill">
+                        Algorithms<span>&rarr;</span>
+                    </a>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="http://zinadore.github.io/sim-os-web/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="http://zinadore.github.io/sim-os-web/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="http://zinadore.github.io/sim-os-web/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="http://zinadore.github.io/sim-os-web/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="http://zinadore.github.io/sim-os-web/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+        <nav class="menu">
+            <header class="major">
+                <h2>Basic Setup</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a href="#creating-the-sketch">Creating the sketch</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="#importing-the-library">Importing the library</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Sketch Methods</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="#settings">settings()</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="#setup">setup()</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="#draw">draw()</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="#sanity-check">Sanity Check</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently 1.0.0. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/js/editorial_util.js"></script>
+<script src="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/js/editorial_main.js"></script>
+<script src="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="http://zinadore.github.io/sim-os-web/Editorial/b2ad5b31/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>
