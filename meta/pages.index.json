@@ -1,0 +1,19 @@
+{
+  "ownKey": "pages",
+  "childrenPages": {"wiki": {
+    "ownKey": "wiki",
+    "ownPages": [{
+      "reference": {
+        "path": "",
+        "baseUrl": "https://docs.iboutsikas.me",
+        "fileName": "wiki",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "https://docs.iboutsikas.me/wiki"
+      },
+      "description": "",
+      "title": "Wiki",
+      "content": "<p>This is the wiki index!@<\/p>\n"
+    }]
+  }}
+}

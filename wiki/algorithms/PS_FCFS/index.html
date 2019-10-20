@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="https://docs.iboutsikas.me/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>First Come, First Served</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+<link rel="prev" href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">
+
+
+<link rel="next" href="https://docs.iboutsikas.me/wiki/running">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://docs.iboutsikas.me","environment":"release","version":"unspecified"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/algorithms/PS_FCFS.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"PS_FCFS","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS"},"next":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"running","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/running"},"previous":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"MS_FirstFit","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit"},"description":"","title":"First Come, First Served"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="https://docs.iboutsikas.me" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>First Come, First Served</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>It is time to implement our first process scheduler. We will be implementing First Come, First Served as it is fairly simple and straightforward. We need a new java file called <code>PS_FCFS.java</code>, just like we did for First Fit.</p>
+<h2 id="quick-recap">Quick Recap</h2>
+<p>FCFS works by putting the processes in a queue in the order they arrive, then they get scheduled in that order. It is not a preemptive algorithm.</p>
+<h2 id="preamble">Preamble</h2>
+<p>Again, we need to declare the package, and import whatever other packages we need first. Instead of importing the whole <code>soss.core</code> package, we will just import <code>soss.core.Process</code> as that is the only class we need out of that package.
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kn">package</span> <span class="nn">soss.schedulers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">2 </span><br><a name="line-3"></a><span class="lineno">3 </span><span class="kn">import</span> <span class="nn">soss.core.Process</span><span class="o">;</span><br></pre></div><br></p>
+<h2 id="the-class">The class</h2>
+<p>This class is slightly bigger so let's take a look at the outline first.
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno"> 1 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PS_FCFS</span> <span class="kd">extends</span> <span class="n">DefaultProcessScheduler</span> <span class="o">{</span><br><a name="line-2"></a><span class="lineno"> 2 </span>  <br><a name="line-3"></a><span class="lineno"> 3 </span>  <span class="kd">public</span> <span class="nf">PS_FCFS</span><span class="o">(){</span><br><a name="line-4"></a><span class="lineno"> 4 </span>    <span class="kd">super</span><span class="o">();</span><br><a name="line-5"></a><span class="lineno"> 5 </span>  <span class="o">}</span><br><a name="line-6"></a><span class="lineno"> 6 </span><br><a name="line-7"></a><span class="lineno"> 7 </span>  <span class="kd">public</span> <span class="n">Process</span> <span class="nf">selectProcessToRun</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span><br><a name="line-8"></a><span class="lineno"> 8 </span><br><a name="line-9"></a><span class="lineno"> 9 </span>  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preempt</span><span class="o">(){</span> <span class="o">}</span><br><a name="line-10"></a><span class="lineno">10 </span>  <br><a name="line-11"></a><span class="lineno">11 </span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeProcess</span><span class="o">(</span><span class="n">Process</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span><br><a name="line-12"></a><span class="lineno">12 </span><br><a name="line-13"></a><span class="lineno">13 </span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addProcess</span><span class="o">(</span><span class="n">Process</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span><br><a name="line-14"></a><span class="lineno">14 </span><br><a name="line-15"></a><span class="lineno">15 </span>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">(){</span><br><a name="line-16"></a><span class="lineno">16 </span>    <span class="k">return</span> <span class="s">&quot;First Come First Served&quot;</span><span class="o">;</span><br><a name="line-17"></a><span class="lineno">17 </span>  <span class="o">}</span><br><a name="line-18"></a><span class="lineno">18 </span><span class="o">}</span><br></pre></div><br></p>
+<p>Much like DefaultMemoryManager, you are given a DefaultProcessScheduler, that implements a lot of the required functionality for you. It also provides you with an <a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a> of Process called queue. Note that it is not an actual queue data structure, but we name it as such to keep with the typical nomenclature. It is up to you to use that data structure properly.</p>
+<p>Next we will implement the methods one by one.</p>
+<h4 id="preempt">preempt()</h4>
+<p>preempt tells the simulation if the process that is <strong>currently</strong> running, should be kicked out of the CPU. It is called once every CPU tick. Since &quot;First Come, First Served&quot; is not a preemtive algorithm it is never the case that we will have to kick out the current process. So we just return false.</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">boolean</span>&nbsp;<span class="nf">preempt</span><span class="o">(){</span>&nbsp;<span class="k">return</span>&nbsp;<span class="kc">false</span><span class="o">;</span>&nbsp;<span class="o">}</span><br></pre></div><br>
+<h4 id="addprocessprocess-p">addProcess(Process p)</h4>
+<p>This method is used when a process has been admitted, and needs to be placed in the queue. We just add that process at the end of the list.</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">void</span>&nbsp;<span class="nf">addProcess</span><span class="o">(</span><span class="n">Process</span>&nbsp;<span class="n">p</span><span class="o">){</span><br><a name="line-2"></a><span class="lineno">2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">p</span><span class="o">);</span><br><a name="line-3"></a><span class="lineno">3&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<h4 id="removeprocessprocess-p">removeProcess(Process p)</h4>
+<p>This method is straightforward as well. And we don't need to manage anything else, we just remove the process from the list!</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">void</span>&nbsp;<span class="nf">removeProcess</span><span class="o">(</span><span class="n">Process</span>&nbsp;<span class="n">p</span><span class="o">){</span><br><a name="line-2"></a><span class="lineno">2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">queue</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">p</span><span class="o">);</span><br><a name="line-3"></a><span class="lineno">3&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<h4 id="selectprocesstorun">selectProcessToRun()</h4>
+<p>As the name implies this method asks us to figure out the next process to run. Since we are never preemptying we can assume that the current process has just finished execution. So our goal is to find the process with the smallest arrival time.</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="n">Process</span>&nbsp;<span class="nf">selectProcessToRun</span><span class="o">()</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Process</span>&nbsp;<span class="n">p</span><span class="o">;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;the&nbsp;queue&nbsp;is&nbsp;empty&nbsp;we&nbsp;got&nbsp;nothing&nbsp;to&nbsp;execute!</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>&nbsp;<span class="k">return</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;we&nbsp;only&nbsp;have&nbsp;one&nbsp;process,&nbsp;we&nbsp;schedule&nbsp;that.</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span>&nbsp;<span class="k">if</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">size</span><span class="o">()==</span><span class="mi">1</span><span class="o">)</span>&nbsp;<span class="k">return</span>&nbsp;<span class="n">queue</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;through&nbsp;all&nbsp;the&nbsp;processes&nbsp;and&nbsp;fine&nbsp;the&nbsp;one&nbsp;with&nbsp;the&nbsp;smallest&nbsp;arrival&nbsp;time</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span><span class="o">{</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span><span class="o">=</span><span class="n">queue</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">1</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">queue</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++){</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">getArrivalTime</span><span class="o">()</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getArrivalTime</span><span class="o">()){</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">queue</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-14"></a><span class="lineno">14&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-15"></a><span class="lineno">15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">p</span><span class="o">;</span><br><a name="line-16"></a><span class="lineno">16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-17"></a><span class="lineno">17&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<div class="alert alert-warning" role="alert">
+  We could instead keep the queue in order when we add processes to it. So the selection would always be queue.get(0). It is my design choice to make addition fast and selection slower. Not necessarily the best choice though!
+</div>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+                <div class="float-left">
+                    <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit" class="button special small pill">
+                        <span>&larr;</span> First Fit
+                    </a>
+                </div>
+            
+            
+                <div class="float-right">
+                    <a href="https://docs.iboutsikas.me/wiki/running" class="button special small pill">
+                        Running the simulation<span>&rarr;</span>
+                    </a>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Assignments</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">Homework 2</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">SimOS Documentation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently unspecified. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_util.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_main.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>

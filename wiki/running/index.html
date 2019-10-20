@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="https://docs.iboutsikas.me/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Running the simulation</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+<link rel="prev" href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">
+
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://docs.iboutsikas.me","environment":"release","version":"unspecified"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/running.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"running","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/running"},"previous":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"PS_FCFS","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS"},"description":"","title":"Running the simulation"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="https://docs.iboutsikas.me" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>Running the simulation</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>We are almost done! Now that we have our two algorithms we can run the simulation. But first we need to tell it which algorithms we have implemented.</p>
+<h2 id="back-to-setup">Back to setup()</h2>
+<p>Going back to the sketch and the setup method, we need to let the simulation know which classes we are providing, so it can load them. We need to change our setup method from:
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="n">Simulator</span> <span class="n">sim</span><span class="o">;</span> <span class="c1">// &lt;-- Don't forget this line!</span><br><a name="line-2"></a><span class="lineno">2 </span><span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span><br><a name="line-3"></a><span class="lineno">3 </span>    <span class="n">SimulatorOptions</span> <span class="n">opts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulatorOptions</span><span class="o">();</span><br><a name="line-4"></a><span class="lineno">4 </span>    <span class="n">opts</span><span class="o">.</span><span class="na">Width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span><br><a name="line-5"></a><span class="lineno">5 </span>    <span class="n">opts</span><span class="o">.</span><span class="na">Height</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span><br><a name="line-6"></a><span class="lineno">6 </span><br><a name="line-7"></a><span class="lineno">7 </span>    <span class="n">sim</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Simulator</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">opts</span><span class="o">);</span><br><a name="line-8"></a><span class="lineno">8 </span><span class="o">}</span><br></pre></div><br></p>
+<p>to</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="n">Simulator</span>&nbsp;<span class="n">sim</span><span class="o">;</span>&nbsp;<span class="c1">//&nbsp;&lt;--&nbsp;Don&#39;t&nbsp;forget&nbsp;this&nbsp;line!</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span><span class="kt">void</span>&nbsp;<span class="nf">setup</span><span class="o">()</span>&nbsp;<span class="o">{</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SimulatorOptions</span>&nbsp;<span class="n">opts</span>&nbsp;<span class="o">=</span>&nbsp;<span class="k">new</span>&nbsp;<span class="n">SimulatorOptions</span><span class="o">();</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">opts</span><span class="o">.</span><span class="na">Width</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">width</span><span class="o">;</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">opts</span><span class="o">.</span><span class="na">Height</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">height</span><span class="o">;</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">opts</span><span class="o">.</span><span class="na">ProcessSchedulers</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">EnumSet</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ProcessSchedulerType</span><span class="o">.</span><span class="na">FirstComeFirstServed</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">);</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">opts</span><span class="o">.</span><span class="na">MemoryManagers</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">EnumSet</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryManagerType</span><span class="o">.</span><span class="na">FirstFit</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">);</span>&nbsp;&nbsp;&nbsp;&nbsp;<br><a name="line-14"></a><span class="lineno">14&nbsp;</span><br><a name="line-15"></a><span class="lineno">15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">opts</span><span class="o">.</span><span class="na">EnableDarkMode</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">true</span><span class="o">;</span><br><a name="line-16"></a><span class="lineno">16&nbsp;</span><br><a name="line-17"></a><span class="lineno">17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">sim</span>&nbsp;<span class="o">=</span>&nbsp;<span class="k">new</span>&nbsp;<span class="n">Simulator</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>&nbsp;<span class="n">opts</span><span class="o">);</span><br><a name="line-18"></a><span class="lineno">18&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<p>By providing <code>opts.ProcessSchedulers</code> and <code>opts.MemoryManagers</code> the framework will generate the correct UI for us and load the classes you created. If you wanted to add RoundRobin as well for example you could do it as such:
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="n">opts</span><span class="o">.</span><span class="na">ProcessSchedulers</span> <span class="o">=</span> <span class="n">EnumSet</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><br><a name="line-2"></a><span class="lineno">2 </span>    <span class="n">ProcessSchedulerType</span><span class="o">.</span><span class="na">FirstComeFirstServed</span><span class="o">,</span><br><a name="line-3"></a><span class="lineno">3 </span>    <span class="n">ProcessSchedulerType</span><span class="o">.</span><span class="na">RoundRobin</span><br><a name="line-4"></a><span class="lineno">4 </span><span class="o">);</span><br></pre></div><br></p>
+<div class="alert alert-success" role="alert">
+  You can also toggle dark mode on and off from the options. Check both modes to see what suits you best !
+</div>
+<h2 id="pixels">Pixels!!</h2>
+<p>Time to see those pixels drawn! Hit the &quot;Play&quot; button in the Processing IDE, select the options you want, and click &quot;Start Simulation&quot;. You should see a screen similar to this:</p>
+<p><img class="img-fluid mx-auto d-block" src="/assets/media/simulation_running.png"></img></p>
+<p>The buttons should be self-explanatory. Forward can be used to step one tick at a time. By default the simulation will try to have one CPU tick per second. However if that is too slow (or you have a lot of processes), you can use the slider to speed things up!</p>
+<h2 id="done">Done</h2>
+<p>You are finally done with the tutorial. CMSC 421 students can move on with their project here. Reminder that you have the <a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank">Java 8 Documentation</a>, <a href="https://processing.org/reference/" target="_blank">Processing Reference</a>, and SimOS Documentation available to use.</p>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+                <div class="float-left">
+                    <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS" class="button special small pill">
+                        <span>&larr;</span> First Come, First Served
+                    </a>
+                </div>
+            
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Assignments</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">Homework 2</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">SimOS Documentation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently unspecified. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_util.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_main.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /
+
+
+
+Sitemap: https://docs.iboutsikas.me/sitemap.xml
+

@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="https://docs.iboutsikas.me/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>First Fit</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+<link rel="prev" href="https://docs.iboutsikas.me/wiki/algorithms">
+
+
+<link rel="next" href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://docs.iboutsikas.me","environment":"release","version":"unspecified"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/algorithms/MS_FirstFit.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"MS_FirstFit","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit"},"next":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"PS_FCFS","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS"},"previous":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"algorithms","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms"},"description":"","title":"First Fit"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="https://docs.iboutsikas.me" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>First Fit</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>We will be implementing the First Fit algorithm in this section. So switch to / create the file MS_FirstFit.java and lets get started.</p>
+<h2 id="preamble">Preamble</h2>
+<p>At the very top of the file, you need the following lines:
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kn">package</span> <span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">2 </span><br><a name="line-3"></a><span class="lineno">3 </span><span class="kn">import</span> <span class="nn">soss.core.*</span><span class="o">;</span><br></pre></div><br></p>
+<p>This lets the Java runtime know that the class in this file is part of that package. It is required as SimOS will use that information to dynamically load your class! We will also use the provided MemoryPartition class that belongs to soss.core so we import that as well.</p>
+<h2 id="the-class">The class</h2>
+<p>Next we will define our class:
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MS_FirstFit</span> <span class="kd">extends</span> <span class="n">DefaultMemoryManager</span> <span class="o">{</span><br><a name="line-2"></a><span class="lineno">2 </span>    <span class="kd">public</span> <span class="nf">MS_FirstFit</span><span class="o">(</span><span class="kt">int</span> <span class="n">RAMSize</span><span class="o">)</span> <span class="o">{</span><br><a name="line-3"></a><span class="lineno">3 </span>        <span class="kd">super</span><span class="o">(</span><span class="n">RAMSize</span><span class="o">);</span><br><a name="line-4"></a><span class="lineno">4 </span>    <span class="o">}</span><br><a name="line-5"></a><span class="lineno">5 </span><br><a name="line-6"></a><span class="lineno">6 </span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span><br><a name="line-7"></a><span class="lineno">7 </span>        <span class="k">return</span> <span class="s">&quot;FirstFit&quot;</span><span class="o">;</span><br><a name="line-8"></a><span class="lineno">8 </span>    <span class="o">}</span><br><a name="line-9"></a><span class="lineno">9 </span><span class="o">}</span><br></pre></div><br></p>
+<p>Extends is Java's way of defining inheritance. DefaultMemoryManager is a class that is provided to you, and does a lot of the heavy lifting. So by inheriting from that class, MS_FirstFit gets all of that functionality for free.</p>
+<div class="alert alert-warning" role="alert">
+Feel free to read more about inheritance online. There are many good resources, like <a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank">this one</a>
+</div>
+<h2 id="selecting-a-memory-partition">Selecting a memory partition</h2>
+<p>There is one more function that is missing, called findAvailablePartition. DefaultMemoryManager provides you an ArrayList of MemoryPartition that represents the RAM. findAvailablePartition asks you to select which of those partitions (if any), will be used to place the new process. If no partition is found, you need to return - 1 to signal the error.</p>
+<p>All implementations will require this method, but every implementation will approach the search in a different way. For example, First Fit will look for the first partition that has enough memory and use that.</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<h2 id="sanity-check">Sanity check</h2>
+<p>I have included the whole file here for posterity's sake.</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kn">package</span>&nbsp;<span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span><span class="kn">import</span>&nbsp;<span class="nn">soss.core.*</span><span class="o">;</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kd">class</span>&nbsp;<span class="nc">MS_FirstFit</span>&nbsp;<span class="kd">extends</span>&nbsp;<span class="n">DefaultMemoryManager</span>&nbsp;<span class="o">{</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="nf">MS_FirstFit</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">RAMSize</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="n">RAMSize</span><span class="o">);</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-14"></a><span class="lineno">14&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-15"></a><span class="lineno">15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-16"></a><span class="lineno">16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-17"></a><span class="lineno">17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-18"></a><span class="lineno">18&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-19"></a><span class="lineno">19&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-20"></a><span class="lineno">20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-21"></a><span class="lineno">21&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><br><a name="line-22"></a><span class="lineno">22&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-23"></a><span class="lineno">23&nbsp;</span><br><a name="line-24"></a><span class="lineno">24&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="n">String</span>&nbsp;<span class="nf">toString</span><span class="o">()</span>&nbsp;<span class="o">{</span><br><a name="line-25"></a><span class="lineno">25&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="s">&quot;FirstFit&quot;</span><span class="o">;</span><br><a name="line-26"></a><span class="lineno">26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-27"></a><span class="lineno">27&nbsp;</span><span class="o">}</span><br></pre></div><br>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+                <div class="float-left">
+                    <a href="https://docs.iboutsikas.me/wiki/algorithms" class="button special small pill">
+                        <span>&larr;</span> Algorithms
+                    </a>
+                </div>
+            
+            
+                <div class="float-right">
+                    <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS" class="button special small pill">
+                        First Come, First Served<span>&rarr;</span>
+                    </a>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Assignments</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">Homework 2</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">SimOS Documentation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently unspecified. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_util.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_main.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>

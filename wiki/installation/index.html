@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="https://docs.iboutsikas.me/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Installation</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+
+<link rel="next" href="https://docs.iboutsikas.me/wiki/setup">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://docs.iboutsikas.me","environment":"release","version":"unspecified"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/installation.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"installation","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/installation"},"next":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"setup","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/setup"},"description":"","title":"Installation"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="https://docs.iboutsikas.me" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>Installation</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>The first thing we need to do is to get Processing running in our machines.</p>
+<h2 id="installing-processing">Installing Processing</h2>
+<hr />
+<ul>
+<li>
+<p>Download Processing 3.x from <a href="https://www.processing.org/download" target="_blank">processing.org</a>.</p>
+<p>Make sure to click on the link that matches your operating system. I have tested this project on Windows as well as the VM you have created for the class. Mac users can follow the instructions on the processing website, but Linux instructions should generally work.</p>
+</li>
+<li>
+<p>Extract the archive. As of writing the latest version is Processing 3.5.3</p>
+<p>You can extract the archive to anywhere you have access. I'm using my Desktop. So the processing directory would be:</p>
+<ul>
+<li>Windows: <code>C:\Users\&lt;username&gt;\Desktop\processing-3.5.3</code></li>
+<li>Linux:   <code>~/Desktop/processing-3.5.3</code></li>
+</ul>
+</li>
+<li>
+<p>Run Processing once to create some required folders.</p>
+<p>Run the executable inside the processing folder. For Windows it should be <code>processing.exe</code> and for Linux <code>processing</code>. Once it is done loading, you should be seeing something like this:</p>
+<p><img class="img-fluid mx-auto d-block" src="/assets/media/empty_processing.jpg" alt="Image of a new processing window" text="New processing window"></img></p>
+</li>
+</ul>
+<h2 id="installing-simos">Installing SimOS</h2>
+<hr />
+<p>Our next step is to download the SimOS library and make available to processing. The following steps should help with that but if you get stuck or want extra information, you can always check the documentation <a href="https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library#manual-install" target="_blank">here</a>.</p>
+<ul>
+<li>
+<p>Download the zip found <a href="https://github.com/Zinadore/sim-os-web/releases/latest" target="_blank">here</a>.</p>
+</li>
+<li>
+<p>Extract it to processing's library folder.
+The location of this folder will vary depending on your OS.</p>
+<ul>
+<li>Windows: <code>C:\Users\&lt;username&gt;\Documents\Pricessing\libraries</code></li>
+<li>Debian VM: <code>~/sketchbooks/libraries</code></li>
+</ul>
+<p>The end result should look like:</p>
+<pre><code>libraries/
+|
+|___ SimOS/
+    |
+    |___ examples/
+    |
+    |___ library/
+    |   |
+    |   |__SimOS.jar
+    |
+    |___ reference/
+    |
+    |___ library.properties
+
+</code></pre>
+</li>
+</ul>
+<p>That should be it. To verify that you have installed it correctly, you can start processing and go to <code>Sketch &gt; Import Library</code> and you should see SimOS at the end of the list, like this:</p>
+<p><img class="img-fluid mx-auto d-block" src="/assets/media/library_installed.png" alt="Image of installed library" text="Installed Library"></img></p>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+            
+                <div class="float-right">
+                    <a href="https://docs.iboutsikas.me/wiki/setup" class="button special small pill">
+                        Basic Setup<span>&rarr;</span>
+                    </a>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Assignments</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">Homework 2</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.iboutsikas.me">SimOS Documentation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+        <nav class="menu">
+            <header class="major">
+                <h2>Installation</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a href="#installing-processing">Installing Processing</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="#installing-simos">Installing SimOS</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently unspecified. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_util.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_main.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>
