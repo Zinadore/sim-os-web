@@ -4,5 +4,5 @@ Disallow: /
 
 
 
-Sitemap: https://docs.iboutsikas.me/sitemap.xml
+Sitemap: https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap.xml
 

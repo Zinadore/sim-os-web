@@ -5,11 +5,11 @@
     "ownPages": [{
       "reference": {
         "path": "",
-        "baseUrl": "https://docs.iboutsikas.me",
+        "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
         "fileName": "wiki",
         "extension": "html",
         "usePrettyUrl": true,
-        "link": "https://docs.iboutsikas.me/wiki"
+        "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki"
       },
       "description": "",
       "title": "Wiki",

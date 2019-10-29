@@ -4,11 +4,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "https://docs.iboutsikas.me",
+        "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
         "fileName": "",
         "extension": "html",
         "usePrettyUrl": true,
-        "link": "https://docs.iboutsikas.me"
+        "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos"
       },
       "description": "",
       "title": "SimOS",
@@ -17,11 +17,11 @@
     {
       "reference": {
         "path": "",
-        "baseUrl": "https://docs.iboutsikas.me",
+        "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
         "fileName": "404",
         "extension": "html",
         "usePrettyUrl": false,
-        "link": "https://docs.iboutsikas.me/404.html"
+        "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/404.html"
       },
       "description": "",
       "title": "SimOS",

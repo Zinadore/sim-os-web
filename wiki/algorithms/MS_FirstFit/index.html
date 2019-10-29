@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 <meta name="generator" content="Orchid 0.17.4"/>
-<link rel="icon" href="https://docs.iboutsikas.me/favicon.ico">
+<link rel="icon" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/favicon.ico">
 
 
 <meta name="robots" content="index, follow">
@@ -28,14 +28,14 @@
 
 
 
-<link rel="prev" href="https://docs.iboutsikas.me/wiki/algorithms">
+<link rel="prev" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms">
 
 
-<link rel="next" href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">
+<link rel="next" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS">
 
 
 <script>
-    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://docs.iboutsikas.me","environment":"release","version":"unspecified"};
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","environment":"release","version":"1.0.0"};
 </script>
 
 
@@ -62,7 +62,7 @@
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"MS_FirstFit","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit"},"next":{"path":"wiki/algorithms","baseUrl":"https://docs.iboutsikas.me","fileName":"PS_FCFS","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS"},"previous":{"path":"wiki","baseUrl":"https://docs.iboutsikas.me","fileName":"algorithms","extension":"html","usePrettyUrl":true,"link":"https://docs.iboutsikas.me/wiki/algorithms"},"description":"","title":"First Fit"};
+    window.allData = {"reference":{"path":"wiki/algorithms","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"MS_FirstFit","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/MS_FirstFit"},"next":{"path":"wiki/algorithms","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"PS_FCFS","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS"},"previous":{"path":"wiki","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"algorithms","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms"},"description":"","title":"First Fit"};
 </script>
 
 <!-- end:debug info -->
@@ -70,11 +70,11 @@
 
 
 <!-- start:inject styles -->
-<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_main.css"/>
-<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/editorial_orchidCustomizations.css"/>
-<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/css/orchidSearch.css"/>
-<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/app.css"/>
-<link rel="stylesheet" type="text/css" href="https://docs.iboutsikas.me/assets/css/pygments.css"/>
+<link rel="stylesheet" type="text/css" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/assets/css/pygments.css"/>
 <!-- end:inject styles -->
 
 </head>
@@ -91,7 +91,7 @@
             <!-- Header -->
             
                 <header id="header">
-    <a href="https://docs.iboutsikas.me" class="logo">SimOS</a>
+    <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos" class="logo">SimOS</a>
     <ul class="icons">
     
     
@@ -119,24 +119,27 @@
                 
                     
                         <p>We will be implementing the First Fit algorithm in this section. So switch to / create the file MS_FirstFit.java and lets get started.</p>
+<div class="alert alert-info" role="alert">
+  You can find more info on how to create files in the previous page!
+</div>
 <h2 id="preamble">Preamble</h2>
-<p>At the very top of the file, you need the following lines:
-<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kn">package</span> <span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">2 </span><br><a name="line-3"></a><span class="lineno">3 </span><span class="kn">import</span> <span class="nn">soss.core.*</span><span class="o">;</span><br></pre></div><br></p>
-<p>This lets the Java runtime know that the class in this file is part of that package. It is required as SimOS will use that information to dynamically load your class! We will also use the provided MemoryPartition class that belongs to soss.core so we import that as well.</p>
+<p>At the very top of the file, you need the following lines:</p>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kn">package</span>&nbsp;<span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">2&nbsp;</span><br><a name="line-3"></a><span class="lineno">3&nbsp;</span><span class="kn">import</span>&nbsp;<span class="nn">soss.core.*</span><span class="o">;</span><br></pre></div><br>
+<p>This lets the Java runtime know that the class in this file is part of that package. It is required as SimOS will use that information to dynamically load your class! We will also use the provided <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/core/MemoryPartition.html" target="__blank">MemoryPartition</a> class that belongs to <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/core/package-summary.html" target="__blank">soss.core</a> so we import that as well.</p>
 <h2 id="the-class">The class</h2>
 <p>Next we will define our class:
 <div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MS_FirstFit</span> <span class="kd">extends</span> <span class="n">DefaultMemoryManager</span> <span class="o">{</span><br><a name="line-2"></a><span class="lineno">2 </span>    <span class="kd">public</span> <span class="nf">MS_FirstFit</span><span class="o">(</span><span class="kt">int</span> <span class="n">RAMSize</span><span class="o">)</span> <span class="o">{</span><br><a name="line-3"></a><span class="lineno">3 </span>        <span class="kd">super</span><span class="o">(</span><span class="n">RAMSize</span><span class="o">);</span><br><a name="line-4"></a><span class="lineno">4 </span>    <span class="o">}</span><br><a name="line-5"></a><span class="lineno">5 </span><br><a name="line-6"></a><span class="lineno">6 </span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span><br><a name="line-7"></a><span class="lineno">7 </span>        <span class="k">return</span> <span class="s">&quot;FirstFit&quot;</span><span class="o">;</span><br><a name="line-8"></a><span class="lineno">8 </span>    <span class="o">}</span><br><a name="line-9"></a><span class="lineno">9 </span><span class="o">}</span><br></pre></div><br></p>
-<p>Extends is Java's way of defining inheritance. DefaultMemoryManager is a class that is provided to you, and does a lot of the heavy lifting. So by inheriting from that class, MS_FirstFit gets all of that functionality for free.</p>
+<p>Extends is Java's way of defining inheritance. <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/managers/DefaultMemoryManager.html">DefaultMemoryManager</a> is a class that is provided to you, and does a lot of the heavy lifting. So by inheriting from that class, MS_FirstFit gets all of that functionality for free.</p>
 <div class="alert alert-warning" role="alert">
 Feel free to read more about inheritance online. There are many good resources, like <a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank">this one</a>
 </div>
 <h2 id="selecting-a-memory-partition">Selecting a memory partition</h2>
-<p>There is one more function that is missing, called findAvailablePartition. DefaultMemoryManager provides you an ArrayList of MemoryPartition that represents the RAM. findAvailablePartition asks you to select which of those partitions (if any), will be used to place the new process. If no partition is found, you need to return - 1 to signal the error.</p>
+<p>There is one more function that is missing, called <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/managers/DefaultMemoryManager.html#findAvailablePartition(int)" target="__blank">findAvailablePartition</a>. <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/managers/DefaultMemoryManager.html" target="__blank">DefaultMemoryManager</a> provides you with an <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="__blank">ArrayList</a> of <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/core/MemoryPartition.html" target="__blank">MemoryPartition</a>s that represents the RAM. <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs/soss/managers/DefaultMemoryManager.html#findAvailablePartition(int)" target="__blank">findAvailablePartition</a> asks you to select which of those partitions (if any), will be used to place the new process. If no partition is found, you need to return - 1 to signal the error.</p>
 <p>All implementations will require this method, but every implementation will approach the search in a different way. For example, First Fit will look for the first partition that has enough memory and use that.</p>
-<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><span class="o">;</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span><span class="o">}</span><br></pre></div><br>
 <h2 id="sanity-check">Sanity check</h2>
 <p>I have included the whole file here for posterity's sake.</p>
-<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kn">package</span>&nbsp;<span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span><span class="kn">import</span>&nbsp;<span class="nn">soss.core.*</span><span class="o">;</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kd">class</span>&nbsp;<span class="nc">MS_FirstFit</span>&nbsp;<span class="kd">extends</span>&nbsp;<span class="n">DefaultMemoryManager</span>&nbsp;<span class="o">{</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="nf">MS_FirstFit</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">RAMSize</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="n">RAMSize</span><span class="o">);</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-14"></a><span class="lineno">14&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-15"></a><span class="lineno">15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-16"></a><span class="lineno">16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-17"></a><span class="lineno">17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-18"></a><span class="lineno">18&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-19"></a><span class="lineno">19&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-20"></a><span class="lineno">20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-21"></a><span class="lineno">21&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><br><a name="line-22"></a><span class="lineno">22&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-23"></a><span class="lineno">23&nbsp;</span><br><a name="line-24"></a><span class="lineno">24&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="n">String</span>&nbsp;<span class="nf">toString</span><span class="o">()</span>&nbsp;<span class="o">{</span><br><a name="line-25"></a><span class="lineno">25&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="s">&quot;FirstFit&quot;</span><span class="o">;</span><br><a name="line-26"></a><span class="lineno">26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-27"></a><span class="lineno">27&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">&nbsp;1&nbsp;</span><span class="kn">package</span>&nbsp;<span class="nn">soss.managers</span><span class="o">;</span><br><a name="line-2"></a><span class="lineno">&nbsp;2&nbsp;</span><br><a name="line-3"></a><span class="lineno">&nbsp;3&nbsp;</span><span class="kn">import</span>&nbsp;<span class="nn">soss.core.*</span><span class="o">;</span><br><a name="line-4"></a><span class="lineno">&nbsp;4&nbsp;</span><br><a name="line-5"></a><span class="lineno">&nbsp;5&nbsp;</span><span class="kd">public</span>&nbsp;<span class="kd">class</span>&nbsp;<span class="nc">MS_FirstFit</span>&nbsp;<span class="kd">extends</span>&nbsp;<span class="n">DefaultMemoryManager</span>&nbsp;<span class="o">{</span><br><a name="line-6"></a><span class="lineno">&nbsp;6&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="nf">MS_FirstFit</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">RAMSize</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-7"></a><span class="lineno">&nbsp;7&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="n">RAMSize</span><span class="o">);</span><br><a name="line-8"></a><span class="lineno">&nbsp;8&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-9"></a><span class="lineno">&nbsp;9&nbsp;</span><br><a name="line-10"></a><span class="lineno">10&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="kt">int</span>&nbsp;<span class="nf">findAvailablePartition</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-11"></a><span class="lineno">11&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MemoryPartition</span>&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="kc">null</span><span class="o">;</span><br><a name="line-12"></a><span class="lineno">12&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Loop&nbsp;over&nbsp;all&nbsp;available&nbsp;partitions</span><br><a name="line-13"></a><span class="lineno">13&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span>&nbsp;<span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">=</span>&nbsp;<span class="mi">0</span><span class="o">;</span>&nbsp;<span class="n">i</span>&nbsp;<span class="o">&lt;</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>&nbsp;<span class="n">i</span><span class="o">++)</span>&nbsp;<span class="o">{</span><br><a name="line-14"></a><span class="lineno">14&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p</span>&nbsp;<span class="o">=</span>&nbsp;<span class="n">ram</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span><br><a name="line-15"></a><span class="lineno">15&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;If&nbsp;it&nbsp;is&nbsp;free&nbsp;and&nbsp;it&nbsp;is&nbsp;large&nbsp;enough&nbsp;we&nbsp;can&nbsp;use&nbsp;it</span><br><a name="line-16"></a><span class="lineno">16&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span>&nbsp;<span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">isFree</span><span class="o">()</span>&nbsp;<span class="o">&amp;&amp;</span>&nbsp;<span class="n">p</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span>&nbsp;<span class="o">&gt;=</span>&nbsp;<span class="n">size</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-17"></a><span class="lineno">17&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="n">i</span><span class="o">;</span><br><a name="line-18"></a><span class="lineno">18&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-19"></a><span class="lineno">19&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-20"></a><span class="lineno">20&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;No&nbsp;partition&nbsp;found,&nbsp;so&nbsp;we&nbsp;return&nbsp;-1</span><br><a name="line-21"></a><span class="lineno">21&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="o">-</span><span class="mi">1</span><span class="o">;</span><br><a name="line-22"></a><span class="lineno">22&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-23"></a><span class="lineno">23&nbsp;</span><br><a name="line-24"></a><span class="lineno">24&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span>&nbsp;<span class="n">String</span>&nbsp;<span class="nf">toString</span><span class="o">()</span>&nbsp;<span class="o">{</span><br><a name="line-25"></a><span class="lineno">25&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span>&nbsp;<span class="s">&quot;FirstFit&quot;</span><span class="o">;</span><br><a name="line-26"></a><span class="lineno">26&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span><br><a name="line-27"></a><span class="lineno">27&nbsp;</span><span class="o">}</span><br></pre></div><br>
 
                     
                 
@@ -158,14 +161,14 @@ Feel free to read more about inheritance online. There are many good resources, 
         <div class="clearfix">
             
                 <div class="float-left">
-                    <a href="https://docs.iboutsikas.me/wiki/algorithms" class="button special small pill">
+                    <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms" class="button special small pill">
                         <span>&larr;</span> Algorithms
                     </a>
                 </div>
             
             
                 <div class="float-right">
-                    <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS" class="button special small pill">
+                    <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS" class="button special small pill">
                         First Come, First Served<span>&rarr;</span>
                     </a>
                 </div>
@@ -212,7 +215,7 @@ Feel free to read more about inheritance online. There are many good resources, 
                     
     
     <li>
-        <a href="https://docs.iboutsikas.me/wiki/installation">Installation</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/installation">Installation</a>
     </li>
     
 
@@ -220,7 +223,7 @@ Feel free to read more about inheritance online. There are many good resources, 
                     
     
     <li>
-        <a href="https://docs.iboutsikas.me/wiki/setup">Basic Setup</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/setup">Basic Setup</a>
     </li>
     
 
@@ -233,7 +236,7 @@ Feel free to read more about inheritance online. There are many good resources, 
             
     
     <li>
-        <a href="https://docs.iboutsikas.me/wiki/algorithms/MS_FirstFit">First Fit</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/MS_FirstFit">First Fit</a>
     </li>
     
 
@@ -241,7 +244,7 @@ Feel free to read more about inheritance online. There are many good resources, 
             
     
     <li>
-        <a href="https://docs.iboutsikas.me/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS">First Come, First Served</a>
     </li>
     
 
@@ -253,7 +256,7 @@ Feel free to read more about inheritance online. There are many good resources, 
                     
     
     <li>
-        <a href="https://docs.iboutsikas.me/wiki/running">Running the simulation</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/running">Running the simulation</a>
     </li>
     
 
@@ -269,7 +272,7 @@ Feel free to read more about inheritance online. There are many good resources, 
                     
     
     <li>
-        <a href="https://docs.iboutsikas.me">Homework 2</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos">Homework 2</a>
     </li>
     
 
@@ -285,7 +288,7 @@ Feel free to read more about inheritance online. There are many good resources, 
                     
     
     <li>
-        <a href="https://docs.iboutsikas.me">SimOS Documentation</a>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs">SimOS Documentation</a>
     </li>
     
 
@@ -313,7 +316,7 @@ Feel free to read more about inheritance online. There are many good resources, 
         <!-- Section -->
         <section>
             <p class="text-center">
-                Currently unspecified. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+                Currently 1.0.0. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
             </p>
         </section>
 
@@ -330,11 +333,11 @@ Feel free to read more about inheritance online. There are many good resources, 
 <!-- start:inject scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_util.js"></script>
-<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_main.js"></script>
-<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/js/editorial_util.js"></script>
+<script src="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/js/editorial_main.js"></script>
+<script src="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/js/editorial_orchidCustomizations.js"></script>
 <script src="https://unpkg.com/lunr/lunr.js"></script>
-<script src="https://docs.iboutsikas.me/Editorial/ad9cef81/assets/js/orchidSearch.js"></script>
+<script src="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/Editorial/895536aa/assets/js/orchidSearch.js"></script>
 <!-- end:inject scripts -->
 
 </body>

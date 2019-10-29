@@ -6,11 +6,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://docs.iboutsikas.me",
+          "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
           "fileName": "home.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://docs.iboutsikas.me/meta/home.index.json"
+          "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/meta/home.index.json"
         },
         "description": "",
         "title": "Home . Index"
@@ -18,11 +18,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://docs.iboutsikas.me",
+          "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
           "fileName": "pages.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://docs.iboutsikas.me/meta/pages.index.json"
+          "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/meta/pages.index.json"
         },
         "description": "",
         "title": "Pages . Index"
@@ -30,11 +30,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://docs.iboutsikas.me",
+          "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
           "fileName": "wiki.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://docs.iboutsikas.me/meta/wiki.index.json"
+          "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/meta/wiki.index.json"
         },
         "description": "",
         "title": "Wiki . Index"
@@ -42,11 +42,11 @@
       {
         "reference": {
           "path": "meta",
-          "baseUrl": "https://docs.iboutsikas.me",
+          "baseUrl": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos",
           "fileName": "all.index",
           "extension": "json",
           "usePrettyUrl": false,
-          "link": "https://docs.iboutsikas.me/meta/all.index.json"
+          "link": "https://bluegrit.cs.umbc.edu/~iboutsi1/simos/meta/all.index.json"
         },
         "description": "",
         "title": "All . Index"

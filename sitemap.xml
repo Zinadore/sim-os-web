@@ -4,16 +4,16 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
-        <loc>https://docs.iboutsikas.me/sitemap-home.xml</loc>
-        <lastmod>2019-10-20</lastmod>
+        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-home.xml</loc>
+        <lastmod>2019-10-28</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://docs.iboutsikas.me/sitemap-pages.xml</loc>
-        <lastmod>2019-10-20</lastmod>
+        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-pages.xml</loc>
+        <lastmod>2019-10-28</lastmod>
     </sitemap>
     <sitemap>
-        <loc>https://docs.iboutsikas.me/sitemap-wiki.xml</loc>
-        <lastmod>2019-10-20</lastmod>
+        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-wiki.xml</loc>
+        <lastmod>2019-10-28</lastmod>
     </sitemap>
     
 </sitemapindex>
