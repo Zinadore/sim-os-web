@@ -21,7 +21,7 @@
 
 
 
-<title>Wiki</title>
+<title>Input</title>
 
 
 <meta name="description" content="A simple OS simulator">
@@ -45,20 +45,20 @@
 <!-- Class: com.eden.orchid.editorial.EditorialTheme -->
 
 <!-- PAGE -->
-<!-- Type: wikiSummary -->
-<!-- Class: com.eden.orchid.wiki.pages.WikiSummaryPage -->
+<!-- Type: staticPage -->
+<!-- Class: com.eden.orchid.pages.pages.StaticPage -->
 <!-- Layout: index -->
 <!-- Resolved Layout: templates/layouts/index.peb -->
-<!-- Page Template: wikiSummary, page -->
+<!-- Page Template: staticPage-tutorials, staticPage, page -->
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
-<!-- Source Filename: wiki/summary.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: pages/tutorials/input.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"wiki","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki"},"description":"","title":"Wiki"};
+    window.allData = {"reference":{"path":"tutorials","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"input","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/tutorials/input"},"description":"","title":"Input"};
 </script>
 
 <!-- end:debug info -->
@@ -105,7 +105,7 @@
             
             
                 <section id="pageContent">
-                    <header class="major"><h2>Wiki</h2></header>
+                    <header class="major"><h2>Input</h2></header>
                     <article>
                         
     <!-- start:inject components -->
@@ -114,22 +114,36 @@
             
                 
                     
-                        <html>
- <head></head>
- <body>
-  <p>This wiki will guide you through setting up Processing 3.x first. Then the SimOS library. Finally it will walk you through creating your first Process Scheduler and memory manager.</p> 
-  <ul> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/installation">Installation</a></li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/setup">Basic Setup</a></li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms">Algorithms</a> 
-    <ul> 
-     <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/MS_FirstFit">First Fit</a></li> 
-     <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS">First Come, First Served</a></li> 
-    </ul> </li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/running">Running the simulation</a></li> 
-  </ul> 
- </body>
-</html>
+                        <h1 id="creating-your-own-processes">Creating your own processes</h1>
+<p>SimOS is fairly extendable. One of its features is that you can bypass the built-in list of processes and create your own with a simple text file!</p>
+<h3 id="process-definition">Process Definition</h3>
+<p>Each line in the text file will define a new process. The format of the process is space separated and looks like this:</p>
+<div class="card">
+    <div class="card-body">
+        ArrivalTime Code Memory Name
+    </div>
+</div>
+<p>You need a space separating each &quot;section&quot;. ArrivalTime is just a non-negative number. Memory is a positive number in MB. Name is a string. Code is also a string and it can accept the following characters:</p>
+<div class="container">
+<dl class="row">
+    <dt class="col-1">*</dt>
+    <dd class="col-10">This is a normal CPU tick</dd>
+    <dt class="col-1">@</dt>
+    <dd class="col-10">This means that the process needs to block for I/O</dd>
+    <dt class="col-1">$</dt>
+    <dd class="col-10">The process terminates when it reaches this character</dd>
+</dl>
+</div>
+<p>So for example, the following two lines would define two processes. One called potato that arrives at time 0, executes for 4 &quot;ticks&quot; then terminates and requires 20 MB of RAM.</p>
+<p>The other process is called Tomato, arrives at time 3, executes for 4 blocks for io then continues for one more tick then terminates. It also requires 20 MB of RAM.</p>
+<div class="card">
+    <div class="card-body">
+    <pre>
+    0 ****$ 20 potato
+    3 ****@*$ 20 Tomato
+    </pre>
+    </div>
+</div>
 
                     
                 

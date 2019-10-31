@@ -21,7 +21,7 @@
 
 
 
-<title>Wiki</title>
+<title>Homework 2</title>
 
 
 <meta name="description" content="A simple OS simulator">
@@ -45,20 +45,20 @@
 <!-- Class: com.eden.orchid.editorial.EditorialTheme -->
 
 <!-- PAGE -->
-<!-- Type: wikiSummary -->
-<!-- Class: com.eden.orchid.wiki.pages.WikiSummaryPage -->
+<!-- Type: staticPage -->
+<!-- Class: com.eden.orchid.pages.pages.StaticPage -->
 <!-- Layout: index -->
 <!-- Resolved Layout: templates/layouts/index.peb -->
-<!-- Page Template: wikiSummary, page -->
+<!-- Page Template: staticPage-assignments, staticPage, page -->
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
-<!-- Source Filename: wiki/summary.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: pages/assignments/homework2.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"wiki","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki"},"description":"","title":"Wiki"};
+    window.allData = {"reference":{"path":"assignments","baseUrl":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos","fileName":"homework2","extension":"html","usePrettyUrl":true,"link":"https://bluegrit.cs.umbc.edu/~iboutsi1/simos/assignments/homework2"},"description":"","title":"Homework 2"};
 </script>
 
 <!-- end:debug info -->
@@ -105,7 +105,7 @@
             
             
                 <section id="pageContent">
-                    <header class="major"><h2>Wiki</h2></header>
+                    <header class="major"><h2>Homework 2</h2></header>
                     <article>
                         
     <!-- start:inject components -->
@@ -114,22 +114,65 @@
             
                 
                     
-                        <html>
- <head></head>
- <body>
-  <p>This wiki will guide you through setting up Processing 3.x first. Then the SimOS library. Finally it will walk you through creating your first Process Scheduler and memory manager.</p> 
-  <ul> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/installation">Installation</a></li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/setup">Basic Setup</a></li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms">Algorithms</a> 
-    <ul> 
-     <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/MS_FirstFit">First Fit</a></li> 
-     <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/algorithms/PS_FCFS">First Come, First Served</a></li> 
-    </ul> </li> 
-   <li><a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki/running">Running the simulation</a></li> 
-  </ul> 
- </body>
-</html>
+                        <h1 id="homework-2">Homework 2</h1>
+<p>Points: 50</p>
+<p>Due by 11:59 EDT on November 10, 2019</p>
+<h2 id="introduction">Introduction</h2>
+<p>In this homework you will be implementing three process scheduling algorithms for a simulated OS called SimOS, then analyzing their results and performance. You will be using Java, Processing, and of course SimOS. The work will be done in two parts. Part 1 will be done in class in groups, and Part 2 is to be done individually.</p>
+<p>You will be submitting everything through GitHub. Before you begin, be sure to accept the homework on GitHub at <a href="https://classroom.github.com/a/ixhcjsUk">https://classroom.github.com/a/ixhcjsUk</a></p>
+<h2 id="set-up">Set Up</h2>
+<p>If you haven't already, visit <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki">the Wiki</a> to set up the project in your own computing environment. Set up will include downloading Processing, SimOS and creating the basic infrastructure code for this homework.</p>
+<p>In the wiki you will also find links to the Java documentation, SimOS documentation and other resources. They are there for you to use so do not ignore them! You will also find that every Java class mentioned in the Wiki is a link to the matching documentation page.</p>
+<p>The rest of this document assumes you have gone through the setup and are somewhat familiar with the framework.</p>
+<h3 id="algorithms">Algorithms</h3>
+<p>You have to implement and perform analysis on three (3) process scheduling algorithms in total. Those are:</p>
+<ol>
+<li>Shortest Job First</li>
+<li>Shortest Remaining Time Next</li>
+<li>Round Robin</li>
+</ol>
+<div class="alert alert-danger">
+    Round Robin requires a parameter to be passed in the constructor. That parameter is the number of time slices each process gets. The constructor should look some like the following:
+</div> 
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="nf">PS_RR</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">slices</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">();</span><br><a name="line-3"></a><span class="lineno">3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Store&nbsp;slices&nbsp;somewhere</span><br><a name="line-4"></a><span class="lineno">4&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<p>The algorithms will be implemented in two parts.</p>
+<h4 id="part-1">Part 1</h4>
+<p>You are to form groups in class and then select one of the three algorithms. It can be whichever one you want. You are then to implement that one algorithm in cooperation with your group. You can work on a single computer if you want, and share the developed algorithm with the rest of your group at the end of class. (e.g. You may email the code to each member)</p>
+<h4 id="part-2">Part 2</h4>
+<p>Part 2 comprises two activities. You must implement the remaining two algorithms supported by SimOS. You are to do this part on your own (i.e. you cannot share the implementation of these with your group). You also have to compare and contrast two algorithms using the criteria we have talked about in class.</p>
+<h5 id="write-up">Write Up</h5>
+<p>The last part of this homework is your algorithm analysis. As part of your write-up you must:</p>
+<ol type="a">
+<li>
+Identify the members of your group and the algorithm you chose to implement together.
+</li>
+
+<li> Select <b>any two</b> of the three implemented algorithms and compare and contrast them. You do not need to write a novel here (it should be no longer than a paragraph or two), you should have data from the simulation. Base your explanation on that data! If you made any interesting design decisions in your implementations, you can discuss them here.
+</li>
+</ol>
+<p>In addition to the comparison you should select one of the three algorithms and create an input of processes that will expose the algorithm's weaknesses. Include in your write up why your data set does that.</p>
+<p>The algorithm can be on of the two discussed previously, or it can be the third one. It is up to you to decide. You can find information on how to create your own data sets <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos/tutorials/input">here</a>.</p>
+<h3 id="submitting">Submitting</h3>
+<p>Each person will have to submit all three algorithms, the sketch file, the analysis and the input data set. Everything should be in the repository you created when you accepted this assignment.</p>
+<p><b>Make sure your analysis is in PDF format. Any other format will not be accepted.</b></p>
+<p>So all in all you need:</p>
+<ul>
+<li>1 .pde file (this is the sketch)</li>
+<li>3 .java files (these are the algorithms)</li>
+<li>1 .pdf file (this is your analysis)</li>
+<li>1 .txt file (this is your input set)</li>
+</ul>
+<p>To submit make sure your files are in their own directory, then run the following command in that directory (substituting the list of files you need to commit for your_files_go_here and your GitHub username for username, of course):</p>
+<pre>
+git init
+git add your_files_go_here
+git commit
+git remote add origin git@github.com:UMBC-CMSC421-FA2019/simos-section-6-username.git
+git push -u origin master
+
+git tag hw2
+git push origin --tags
+</pre>
 
                     
                 
