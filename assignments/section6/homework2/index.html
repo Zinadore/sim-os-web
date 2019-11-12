@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.4"/>
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Homework 2</title>
+
+
+<meta name="description" content="A simple OS simulator">
+
+
+
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.4","baseUrl":"http://localhost:8080","environment":"release","version":"1.0.1"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: staticPage -->
+<!-- Class: com.eden.orchid.pages.pages.StaticPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: staticPage-assignments, staticPage, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: pages/assignments/section6/homework2.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"assignments/section6","baseUrl":"http://localhost:8080","fileName":"homework2","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/assignments/section6/homework2"},"description":"","title":"Homework 2"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/Editorial/f4023e15/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/Editorial/f4023e15/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/Editorial/f4023e15/assets/css/orchidSearch.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/app.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/pygments.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="http://localhost:8080" class="logo">SimOS</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/Zinadore/SimOS" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>Homework 2</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <p>Points: 50</p>
+<p>Due by 11:59 EDT on November 10, 2019</p>
+<h2 id="introduction">Introduction</h2>
+<p>In this homework you will be implementing three process scheduling algorithms for a simulated OS called SimOS, then analyzing their results and performance. You will be using Java, Processing, and of course SimOS. The work will be done in two parts. Part 1 will be done in class in groups, and Part 2 is to be done individually.</p>
+<p>You will be submitting everything through GitHub. Before you begin, be sure to accept the homework on GitHub at <a href="https://classroom.github.com/a/ixhcjsUk">https://classroom.github.com/a/ixhcjsUk</a></p>
+<h2 id="set-up">Set Up</h2>
+<p>If you haven't already, visit <a href="http://localhost:8080/wiki">the Wiki</a> to set up the project in your own computing environment. Set up will include downloading Processing, SimOS and creating the basic infrastructure code for this homework.</p>
+<p>In the wiki you will also find links to the Java documentation, SimOS documentation and other resources. They are there for you to use so do not ignore them! You will also find that every Java class mentioned in the Wiki is a link to the matching documentation page.</p>
+<p>The rest of this document assumes you have gone through the setup and are somewhat familiar with the framework.</p>
+<h3 id="algorithms">Algorithms</h3>
+<p>You have to implement and perform analysis on three (3) process scheduling algorithms in total. Those are:</p>
+<ol>
+<li>Shortest Job First</li>
+<li>Shortest Remaining Time Next</li>
+<li>Round Robin</li>
+</ol>
+<div class="alert alert-danger">
+    Round Robin requires a parameter to be passed in the constructor. That parameter is the number of time slices each process gets. The constructor should look something like the following:
+</div> 
+<div class="highlight"><pre><span></span><a name="line-1"></a><span class="lineno">1&nbsp;</span><span class="kd">public</span>&nbsp;<span class="nf">PS_RR</span><span class="o">(</span><span class="kt">int</span>&nbsp;<span class="n">slices</span><span class="o">)</span>&nbsp;<span class="o">{</span><br><a name="line-2"></a><span class="lineno">2&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">();</span><br><a name="line-3"></a><span class="lineno">3&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//&nbsp;Store&nbsp;slices&nbsp;somewhere</span><br><a name="line-4"></a><span class="lineno">4&nbsp;</span><span class="o">}</span><br></pre></div><br>
+<p>The algorithms will be implemented in two parts.</p>
+<h4 id="part-1">Part 1</h4>
+<p>You are to form groups in class and then select one of the three algorithms. It can be whichever one you want. You are then to implement that one algorithm in cooperation with your group. You can work on a single computer if you want, and share the developed algorithm with the rest of your group at the end of class. (e.g. You may email the code to each member)</p>
+<h4 id="part-2">Part 2</h4>
+<p>Part 2 comprises two activities. You must implement the remaining two algorithms supported by SimOS. You are to do this part on your own (i.e. you cannot share the implementation of these with your group). You also have to compare and contrast two algorithms using the criteria we have talked about in class.</p>
+<h5 id="write-up">Write Up</h5>
+<p>The last part of this homework is your algorithm analysis. As part of your write-up you must:</p>
+<ol type="a">
+<li>
+Identify the members of your group and the algorithm you chose to implement together.
+</li>
+
+<li> Select <b>any two</b> of the three implemented algorithms and compare and contrast them. You do not need to write a novel here (it should be no longer than a paragraph or two), you should have data from the simulation. Base your explanation on that data! If you made any interesting design decisions in your implementations, you can discuss them here.
+</li>
+</ol>
+<p>In addition to the comparison you should select one of the three algorithms and create an input of processes that will expose the algorithm's weaknesses. Include in your write up why your data set does that.</p>
+<p>The algorithm can be on of the two discussed previously, or it can be the third one. It is up to you to decide. You can find information on how to create your own data sets <a href="http://localhost:8080/tutorials/input">here</a>.</p>
+<h3 id="submitting">Submitting</h3>
+<p>Each person will have to submit all three algorithms, the sketch file, the analysis and the input data set. Everything should be in the repository you created when you accepted this assignment.</p>
+<p><b>Make sure your analysis is in PDF format. Any other format will not be accepted.</b></p>
+<p>So all in all you need:</p>
+<ul>
+<li>1 .pde file (this is the sketch)</li>
+<li>3 .java files (these are the algorithms)</li>
+<li>1 .pdf file (this is your analysis)</li>
+<li>1 .txt file (this is your input set)</li>
+</ul>
+<p>To submit make sure your files are in their own directory, then run the following command in that directory (substituting the list of files you need to commit for your_files_go_here and your GitHub username for username, of course):</p>
+<pre>
+git init
+git add your_files_go_here
+git commit
+git remote add origin git@github.com:UMBC-CMSC421-FA2019/simos-section-6-username.git
+git push -u origin master
+
+git tag hw2
+git push origin --tags
+</pre>������������������
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>SimOS</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="http://localhost:8080/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="http://localhost:8080/wiki/setup">Basic Setup</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Algorithms</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="http://localhost:8080/wiki/algorithms/MS_FirstFit">First Fit</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="http://localhost:8080/wiki/algorithms/PS_FCFS">First Come, First Served</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="http://localhost:8080/wiki/running">Running the simulation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Assignments</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">Tutorials</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="http://localhost:8080/tutorials/input">Input</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://bluegrit.cs.umbc.edu/~iboutsi1/simos-docs">SimOS Documentation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://docs.oracle.com/javase/8/docs/api">Java 8</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://processing.org/reference">Processing Reference</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently 1.0.1. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; SimOS. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="http://localhost:8080/Editorial/f4023e15/assets/js/editorial_util.js"></script>
+<script src="http://localhost:8080/Editorial/f4023e15/assets/js/editorial_main.js"></script>
+<script src="http://localhost:8080/Editorial/f4023e15/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="http://localhost:8080/Editorial/f4023e15/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>

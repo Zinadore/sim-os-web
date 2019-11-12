@@ -5,15 +5,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
         <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-home.xml</loc>
-        <lastmod>2019-10-31</lastmod>
+        <lastmod>2019-11-11</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-pages.xml</loc>
-        <lastmod>2019-10-31</lastmod>
+        <lastmod>2019-11-11</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/sitemap-wiki.xml</loc>
-        <lastmod>2019-10-31</lastmod>
+        <lastmod>2019-11-11</lastmod>
     </sitemap>
     
 </sitemapindex>

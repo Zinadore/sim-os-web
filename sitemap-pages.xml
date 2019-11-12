@@ -4,20 +4,26 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/assignments/homework2</loc>
-        <lastmod>2019-10-31</lastmod>
+        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/section3/homework2</loc>
+        <lastmod>2019-11-11</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/section6/homework2</loc>
+        <lastmod>2019-11-11</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
         <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/tutorials/input</loc>
-        <lastmod>2019-10-31</lastmod>
+        <lastmod>2019-11-11</lastmod>
         <priority>0.0</priority>
         
     </url>
     <url>
         <loc>https://bluegrit.cs.umbc.edu/~iboutsi1/simos/wiki</loc>
-        <lastmod>2019-10-31</lastmod>
+        <lastmod>2019-11-11</lastmod>
         <priority>0.0</priority>
         
     </url>
